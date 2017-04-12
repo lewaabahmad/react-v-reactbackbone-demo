@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
+  get 'donate', to: 'donate#index'
+
+  post 'donate', to: 'donate#create'
 end
