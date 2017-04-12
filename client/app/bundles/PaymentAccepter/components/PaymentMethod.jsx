@@ -15,7 +15,8 @@ export default class PaymentMethod extends React.Component {
       <div id="payment-page" className="contained">
         <span className="glyphicon glyphicon-remove" onClick={ this.goBack.bind(this) }></span>
         <div>
-          <div>  
+          <h3>${ this.props.donation }</h3>
+          <div>
             <label>Card Number:</label>
           </div>
           <div>

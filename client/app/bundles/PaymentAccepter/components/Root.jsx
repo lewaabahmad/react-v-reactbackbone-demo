@@ -11,27 +11,33 @@ export default class Root extends React.Component {
 
   constructor(props, _railsContext) {
     super(props);
-    this.state = { page: "amount" };
+    this.state = { page: "amount", donation_amount: 0 };
+  }
+
+  updatePageState( newPage ) {
+    this.setState({ page: newPage })
+  }
+
+  updateDonation( amount ) {
+    this.setState({ donation_amount: amount })
   }
 
   pageManager() {
     switch( this.state.page ) {
       case "amount":
-        return <Amount pageHandler={ this.updatePageState.bind(this) } />;
+        return <Amount setDonationAmount={ this.updateDonation.bind(this) }
+                       pageHandler={ this.updatePageState.bind(this) } />;
         break;
       case "payment":
-        return <PaymentMethod pageHandler={ this.updatePageState.bind(this) } />;
+        return <PaymentMethod donation={ this.state.donation_amount }
+                              pageHandler={ this.updatePageState.bind(this) } />;
         break;
       case "thankyou":
-        return <ThankYou  pageHandler={ this.updatePageState.bind(this) } />;
+        return <ThankYou pageHandler={ this.updatePageState.bind(this) } />;
         break;
       default: 
         return;
     }
-  }
-
-  updatePageState( newPage ) {
-    this.setState({ page: newPage })
   }
 
   render() {
