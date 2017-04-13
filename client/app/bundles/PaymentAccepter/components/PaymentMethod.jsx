@@ -6,8 +6,13 @@ export default class PaymentMethod extends React.Component {
     this.props.pageHandler( "amount" )
   }
 
+  postDonation() {
+    console.log( "liT!" )
+  }
+
   submitPayment() {
-    this.props.pageHandler( "thankyou" )
+    this.postDonation;
+    this.props.pageHandler( "thankyou" );
   }
 
   render() {
@@ -20,7 +25,7 @@ export default class PaymentMethod extends React.Component {
             <label>Card Number:</label>
           </div>
           <div>
-            <input type="" name="" />
+            <input type="" name="" value="4242 4242 4242 4242"/>
           </div>
         </div>
         <div>
@@ -28,7 +33,7 @@ export default class PaymentMethod extends React.Component {
             <label>Exp:</label>
           </div>
           <div>
-            <input type="" name="" />
+            <input type="" name="" value="4242"/>
           </div>
         </div>
         <div>
@@ -36,7 +41,7 @@ export default class PaymentMethod extends React.Component {
             <label>CVC</label>
           </div>
           <div>
-            <input type="" name="" />
+            <input type="" name="" value="4242"/>
           </div>
         </div>
         <button className="btn btn-primary" onClick={ this.submitPayment.bind(this) }>Make Payment</button>

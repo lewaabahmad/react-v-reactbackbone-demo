@@ -6,11 +6,12 @@ import ThankYou from './ThankYou'
 
 export default class Root extends React.Component {
   static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
+    authenticity_token: PropTypes.string.isRequired, // this is passed from the Rails view
   };
 
   constructor(props, _railsContext) {
     super(props);
+    console.log( this.props.authenticity_token )
     this.state = { page: "amount", donation_amount: 0 };
   }
 
